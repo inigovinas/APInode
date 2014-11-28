@@ -24,10 +24,12 @@ app.get('/ciudad', function (req, res) {
 	var request = require('request');
 	request({url:info, json:"true"}, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
+
+			
+
 			console.log(body[0]);
-			var key=body[0].Key;
 			//res.json(body);
-			res.render('listar', key);
+			res.render('listar',body[0]);
 		} else {
 			res.json({error:"request error"});
 		}
