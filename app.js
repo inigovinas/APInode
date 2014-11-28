@@ -19,7 +19,8 @@ app.get('/ciudad', function (req, res) {
 	request({url:info, json:"true"}, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			console.log(body);
-			res.json(body);
+			//res.json(body);
+			res.render('listar', body);
 		} else {
 			res.json({error:"request error"});
 		}
