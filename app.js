@@ -1,9 +1,15 @@
 var express = require('express');
 var app = express();
 
+
+var exphbs  = require('express-handlebars');
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
+
 var request = require('request');
 
-// **********************************************
+// ********************Info Ciudad**************************
 
 
 app.get('/ciudad', function (req, res) {
@@ -18,14 +24,19 @@ app.get('/ciudad', function (req, res) {
 	var request = require('request');
 	request({url:info, json:"true"}, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
-			console.log(body);
+			console.log(body[0]);
+			var key=body[0].Key;
 			//res.json(body);
-			res.render('listar', body);
+			res.render('listar', key);
 		} else {
 			res.json({error:"request error"});
 		}
 	});
 });
+
+
+
+// ********************Tiempo Ciudad**************************
 
 app.get('/tiempo', function (req, res) {
 
