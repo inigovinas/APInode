@@ -9,6 +9,9 @@ app.set('view engine', 'handlebars');
 
 var request = require('request');
 
+// public files
+app.use(express.static(__dirname + '/public'));
+
 // ********************Info Ciudad**************************
 
 
@@ -24,12 +27,9 @@ app.get('/ciudad', function (req, res) {
 	var request = require('request');
 	request({url:info, json:"true"}, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
-
-			
-
 			console.log(body[0]);
 			//res.json(body);
-			res.render('listar',body[0]);
+			res.render('info',body[0]);
 		} else {
 			res.json({error:"request error"});
 		}
@@ -47,8 +47,8 @@ app.get('/tiempo', function (req, res) {
 	var request = require('request');
 	request({url:tiempo, json:"true"}, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
-			console.log(body);
-			res.json(body);
+			console.log(body[0]);
+			res.render('tiempo',body[0]);
 		} else {
 			res.json({error:"request error"});
 		}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>info</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        *{font-family: 'Montserrat', sans-serif;
+            color:white;
+        }
+        #cont{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+        }
+
+    </style>
+</head>
+<body background="img/ola.jpg" no-repeat center center fixed>
+   
+    <div id="cont">
+        <h1>INFO. DONOSTI</h1>
+
+        <p>{{Region.EnglishName}}</p>
+        <p>{{Country.EnglishName}}</p>
+        <p>{{AdministrativeArea.LocalizedType}} : {{AdministrativeArea.EnglishName}}</p>
+        <p>Zona horaria: {{TimeZone.Name}}</p>
+        Geolocalización: 
+        <ul>
+            <li>Latitud: {{GeoPosition.Latitude}}</li>
+            <li> Longitud: {{GeoPosition.Longitude}}</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

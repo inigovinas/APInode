@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>info</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        *{font-family: 'Montserrat', sans-serif;
+            color:white;
+        }
+        #cont{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+        }
+
+    </style>
+</head>
+<body background="img/ola.jpg" no-repeat center center fixed>
+   
+      <div id="cont">
+          <h1>TIEMPO DONOSTIA</h1>
+          
+          <p>Fecha: {{LocalObservationDateTime}}</p>
+          <p>Tiempo: {{WeatherText}}</p>
+          <p>Temperatura: {{Temperature.Metric.Value}}{{Temperature.Metric.Unit}}</p>
+
+      </div>
+
+</body>
+</html>
+    
